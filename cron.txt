@@ -1,0 +1,25 @@
+
+Many applications need to run some sort of scheduled tasks for chores like system maintenance, administration, taking a daily backup of data or sending emails.
+A Cron is a time-based job scheduler, which enables applications to schedule a job to run automatically at a certain date or time.
+syntax : cron.schedule("second(optional) minute hour day_of_month month day_of_week",callback_function,{ schedule, timezone }(optional));
+in a syntax above: second argument and options are optional. by default, if we did not specify second arguments its value becomes 0 and in options object,
+by default schedule is true and timezone is server time
+# ┌────────────── second (optional)
+# │ ┌──────────── minute
+# │ │ ┌────────── hour
+# │ │ │ ┌──────── day of month
+# │ │ │ │ ┌────── month
+# │ │ │ │ │ ┌──── day of week
+# │ │ │ │ │ │
+# │ │ │ │ │ │
+# * * * * * *
+
+accepted values:
+field	    value
+second	     0-59
+minute        0-59
+hour	         0-23
+minute	     0-59
+day of month	 1-31
+month	     1-12 (or names)
+day of week	 0-7 (or names, 0 or 7 are sunday)
