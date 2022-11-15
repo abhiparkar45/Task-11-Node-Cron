@@ -2,9 +2,10 @@ const cron = require("node-cron");
 
 // scheduling a task of logging hello on console at 10:56 am everyday of every month at thursday :
 cron.schedule(
-  "0 56 10 * * thursday",
+  "0-10 3 17 * * monday",
   () => {
-    console.log("hello");
+    const time = new Date();
+    console.log(`hello ! time right now is ${time.toLocaleTimeString()}`);
   },
   {
     scheduled: true,
